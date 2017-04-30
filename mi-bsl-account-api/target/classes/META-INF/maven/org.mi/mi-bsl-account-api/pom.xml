@@ -34,4 +34,5 @@
 			<artifactId>hibernate-validator</artifactId>
 		</dependency>
 	</dependencies>
+	<name>mi-bsl-account-api</name>
 </project>

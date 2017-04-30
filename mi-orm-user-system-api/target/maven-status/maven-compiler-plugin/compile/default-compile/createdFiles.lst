@@ -1,0 +1,9 @@
+org\mi\user\repository\UserRepository.class
+org\mi\user\domain\CurrencyAmount.class
+org\mi\user\domain\Level.class
+org\mi\user\controller\UserController.class
+org\mi\user\domain\LevelInfo.class
+org\mi\user\Application.class
+org\mi\user\domain\User.class
+org\mi\user\service\UserService.class
+org\mi\user\domain\Gendar.class

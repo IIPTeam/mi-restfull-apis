@@ -33,4 +33,5 @@
 			<artifactId>hibernate-validator</artifactId>
 		</dependency>
 	</dependencies>
+  <name>mi-bsl-common</name>
 </project>

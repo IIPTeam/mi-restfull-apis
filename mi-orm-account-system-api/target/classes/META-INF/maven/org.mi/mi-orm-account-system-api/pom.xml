@@ -49,4 +49,5 @@
 			<artifactId>hibernate-validator</artifactId>
 		</dependency>
 	</dependencies>
+	<name>mi-orm-account-system-api</name>
 </project>
