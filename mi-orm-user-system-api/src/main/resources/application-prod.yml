@@ -1,0 +1,6 @@
+
+spring:
+  datasource:
+    jdbcUrl: ${jndi-datasource-jdbc-url}
+    username: ${jndi-datasource-jdbc-username}
+    password: ${jndi-datasource-jdbc-password}

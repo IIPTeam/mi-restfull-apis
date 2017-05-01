@@ -2,6 +2,8 @@ package org.mi.user.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.mi.user.domain.User;
 import org.mi.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ public class UserService {
 	@Autowired
 	private UserRepository repository;
 	
+	@Transactional
 	public User add(User user){
 		return this.repository.saveAndFlush(user);
 	}

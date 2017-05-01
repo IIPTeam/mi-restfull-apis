@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.Api;
 
 @RestController
-@RequestMapping("user")
-@Api("user")
+@RequestMapping("process/user")
+@Api("process/user")
 public class UserController {
 	@Autowired
 	private UserService userService;

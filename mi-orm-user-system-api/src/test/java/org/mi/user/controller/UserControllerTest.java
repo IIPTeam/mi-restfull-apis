@@ -1,5 +1,6 @@
 package org.mi.user.controller;
 
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -23,7 +24,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = Application.class)
-// @DataJpaTest(showSql=true)
 @AutoConfigureTestDatabase
 public class UserControllerTest {
 	private MockMvc mvc;
@@ -44,9 +44,9 @@ public class UserControllerTest {
 		ClassPathResource classPathResource = new ClassPathResource("org/mi/user/stub/post-user.json");
 		byte[] readAsByteArray = FileUtil.readAsByteArray(classPathResource.getInputStream());
 
-		mvc.perform(post("/user").contentType(MediaType.APPLICATION_JSON_UTF8).accept(MediaType.APPLICATION_JSON_UTF8)
+		mvc.perform(post("/process/user").contentType(MediaType.APPLICATION_JSON_UTF8).accept(MediaType.APPLICATION_JSON_UTF8)
 				.content(new String(readAsByteArray, "utf-8"))).andExpect(status().isOk())
-				.andExpect(content().string(Matchers.contains("userID")));
+				.andExpect(content().string(containsString("userID")));
 	}
 	
 	@Test
