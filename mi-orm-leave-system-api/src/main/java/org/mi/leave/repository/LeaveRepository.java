@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface LeaveRepository extends JpaRepository<Leave, Long> {
 
-	@Query("select user from User user")
+	@Query("select leave from Leave leave")
 	public List<Leave> findUsers();
 	
 }
