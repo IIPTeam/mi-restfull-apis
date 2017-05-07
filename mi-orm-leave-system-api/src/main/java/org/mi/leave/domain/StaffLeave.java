@@ -3,7 +3,6 @@ package org.mi.leave.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,7 +12,7 @@ import javax.validation.Valid;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-public class Leave implements Serializable{
+public class StaffLeave implements Serializable{
 
 	/**
 	 * serial version id
@@ -24,10 +23,7 @@ public class Leave implements Serializable{
 	@Id
 	@GeneratedValue
 	private long userID;
-	
-	//EHR is the mandatory unique attribute for our staff, hence turn off the update feature
-	@Column(length=10,unique=true,updatable=false)
-	private String EHR;
+
 			
 	@JsonFormat(pattern="yyyy-MM-dd")
 	@Valid
@@ -51,13 +47,6 @@ public class Leave implements Serializable{
 		this.userID = userID;
 	}
 
-	public String getEHR() {
-		return EHR;
-	}
-
-	public void setEHR(String eHR) {
-		EHR = eHR;
-	}
 
 	public Date getStartTime() {
 		return startTime;

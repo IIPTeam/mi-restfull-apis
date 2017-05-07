@@ -4,7 +4,8 @@ package org.mi.leave.controller;
 import javax.validation.Valid;
 
 
-import org.mi.leave.domain.Leave;
+import org.mi.leave.domain.StaffLeave;
+import org.mi.leave.domain.StaffLeaveRemain;
 import org.mi.leave.service.LeaveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,9 +20,14 @@ public class LeaveController {
 	@Autowired
 	private LeaveService service;
 	
-	@RequestMapping(method = RequestMethod.POST)
-	public Leave add(@RequestBody @Valid Leave leave) {
+	@RequestMapping(value ="/generate",method = RequestMethod.POST)
+	public StaffLeave add(@RequestBody @Valid StaffLeave leave) {
 		return this.service.add(leave);
+	}
+	
+	@RequestMapping(value ="/remain",method = RequestMethod.POST)
+	public StaffLeaveRemain findBYStaff(@RequestBody @Valid StaffLeaveRemain remain) {
+		return this.service.find(remain);
 	}
 
 }
