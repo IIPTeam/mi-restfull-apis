@@ -3,6 +3,7 @@ package org.mi.leave.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -34,7 +35,12 @@ public class StaffLeave implements Serializable{
 	@Valid
 	private Date endTime;
 	
+	@Column
 	private String leaveReason;
+	
+	//backup userId
+	@Column(length=10)
+	private Long backup;
 	
 	private  LeaveType leaveType;
 	
