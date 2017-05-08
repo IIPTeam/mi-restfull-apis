@@ -26,7 +26,7 @@ public class LeaveController {
 	}
 	
 	@RequestMapping(value ="/remain",method = RequestMethod.POST)
-	public StaffLeaveRemain findBYStaff(@RequestBody @Valid StaffLeaveRemain remain) {
+	public String findBYStaff(@RequestBody @Valid StaffLeaveRemain remain) {
 		return this.service.find(remain.getUserID());
 	}
 
