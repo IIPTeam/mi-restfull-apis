@@ -24,9 +24,9 @@ public class LeaveService {
 	}
 	
 	@Transactional
-	public StaffLeaveRemain find(StaffLeaveRemain remain){
+	public StaffLeaveRemain find(Long userId){
 		
-		return this.remainrepository.findLeaves(remain);
+		return this.remainrepository.findLeaves(userId);
 	}
 	
 }

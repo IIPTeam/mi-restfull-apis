@@ -11,6 +11,6 @@ import org.springframework.stereotype.Repository;
 public interface LeaveRemainRepository extends JpaRepository<StaffLeaveRemain,Long> {
 	
 	@Query("select userID from StaffLeaveRemain staffLeaveRemain where staffLeaveRemain.userID= :userID")
-	public StaffLeaveRemain findLeaves(@Param(value = "userID") StaffLeaveRemain userID);
+	public StaffLeaveRemain findLeaves(@Param(value = "userID") Long userID);
 	
 }
