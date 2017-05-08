@@ -1,5 +1,7 @@
 package org.mi.leave.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.mi.leave.domain.StaffLeave;
@@ -27,6 +29,11 @@ public class LeaveService {
 	public String find(Long userId){
 		
 		return this.remainrepository.findLeaves(userId);
+	}
+	
+	@Transactional
+	public List<StaffLeave> findLeaveById(Long userId){
+		return this.repository.findLeaveById(userId);
 	}
 	
 }
