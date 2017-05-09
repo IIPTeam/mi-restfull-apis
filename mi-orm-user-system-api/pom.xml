@@ -50,12 +50,9 @@
 			<artifactId>hibernate-validator</artifactId>
 		</dependency>
 
-		<!-- <dependency>
-			<groupId>org.mi</groupId>
-			<artifactId>mi-bsl-common</artifactId>
-			<version>${project.version}</version>
-		</dependency> -->
-		
+		<!-- <dependency> <groupId>org.mi</groupId> <artifactId>mi-bsl-common</artifactId> 
+			<version>${project.version}</version> </dependency> -->
+
 		<dependency>
 			<groupId>org.mi</groupId>
 			<artifactId>mi-orm-common</artifactId>
@@ -82,6 +79,23 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.4.3</version>
+				<configuration>
+					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+					<dockerDirectory>src/main/docker</dockerDirectory>
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+					</resources>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
