@@ -1,8 +1,11 @@
+server:
+  port: 8090
+
 spring:
   profiles:
-    active:
-    - dev
+    active: dev
   datasource:
+    driver-class-name: com.mysql.jdbc.Driver
     max-active: 5
     pool-name: SpringBootHikariCP
     maximum-pool-size: 5
@@ -14,9 +17,11 @@ spring:
     max-open-prepared-statements: 10
   jpa:
     show-sql: true
-    hibernate.ddl-auto: create-drop
-    database-platform: org.hibernate.dialect.HSQLDialect
+    hibernate.ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
   http:
     encoding:
       force: true
 
+logging:
+  path: /logs/mi

@@ -1,0 +1,12 @@
+id
+code
+name
+type //项目类型：人员外包、项目外包
+level //A级 B级 C级
+amount //项目金额
+setupDate //立项日期
+startDate //开始时间
+endDate //结束时间
+director //项目总监，一般为交付部经理
+department //所属交付部
+remark //一般为立项原因

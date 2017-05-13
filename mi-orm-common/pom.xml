@@ -33,10 +33,10 @@
 			<artifactId>hibernate-validator</artifactId>
 		</dependency>
 		
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.mi</groupId>
 			<artifactId>mi-bsl-common</artifactId>
 			<version>${project.version}</version>
-		</dependency>
+		</dependency> -->
 	</dependencies>
 </project>
