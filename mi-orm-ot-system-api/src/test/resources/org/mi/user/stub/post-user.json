@@ -1,0 +1,20 @@
+{
+  "chineseName": "fgfg",
+  "createDate": "2017-04-30",
+  "deboardDate": "2017-04-30",
+  "ehr": "Exxx002",
+  "email": "xxx@test.com",
+  "englishName": "Fighter",
+  "gender": "FEMALE",
+  "levelInfo": {
+    "cat": "Java",
+    "level": "SSE",
+    "rate": {
+      "amount": 120,
+      "currency": "rmb"
+    }
+  },
+  "onboardDate": "2017-04-30",
+  "phoneNumber": "123789798789",
+  "staffID": "4xxx7890"
+}
