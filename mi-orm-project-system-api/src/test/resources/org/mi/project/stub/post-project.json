@@ -3,6 +3,7 @@
 	"name": "IIP",
 	"type": "项目外包",
 	"level": "A",
+	"currency": "USD",
 	"amount": "10000",
 	"setupDate": "2016-05-02",
 	"startDate": "2016-10-02",

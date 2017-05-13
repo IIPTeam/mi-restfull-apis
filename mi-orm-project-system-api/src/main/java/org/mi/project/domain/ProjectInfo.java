@@ -51,6 +51,12 @@ public class ProjectInfo implements Serializable {
 	 */
 	@Column
 	private Long amount;
+	
+	/**
+	 * 结算货币类型
+	 */
+	@Column
+	private String currency;
 
 	/**
 	 * 立项时间
@@ -219,4 +225,13 @@ public class ProjectInfo implements Serializable {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
+
+	public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+	
 }
