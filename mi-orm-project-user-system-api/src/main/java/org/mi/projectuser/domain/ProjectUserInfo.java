@@ -29,8 +29,14 @@ public class ProjectUserInfo implements Serializable {
 	@Column(length = 10)
 	private String projectCode;
 
+	@Column
+	private String projectName;
+
 	@Column(length = 10)
 	private String userCode;
+
+	@Column
+	private String userName;
 
 	@Column
 	private Role role;
@@ -98,6 +104,22 @@ public class ProjectUserInfo implements Serializable {
 
 	public void setVersion(long version) {
 		this.version = version;
+	}
+
+	public String getProjectName() {
+		return projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 }
