@@ -83,7 +83,7 @@ public class ProjectInfo implements Serializable {
 	private Date endDate;
 
 	/**
-	 * 项目总监staffID，一般为交付部经理
+	 * 项目总监，一般为交付部经理
 	 */
 	@Column(length = 8)
 	private String director;
