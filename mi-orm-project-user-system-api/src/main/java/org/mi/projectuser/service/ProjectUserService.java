@@ -31,4 +31,8 @@ public class ProjectUserService {
 	public List<ProjectUserInfo> list(){
 		return this.repository.findAll();
 	}
+	
+	public ProjectUserInfo findRelationByUser(String ehr) {
+		return this.repository.findByUserCode(ehr);
+	}
 }
