@@ -1,11 +1,13 @@
 package org.mi.projectuser.service;
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.mi.common.MergeUtil;
 import org.mi.projectuser.domain.ProjectUserInfo;
+import org.mi.projectuser.domain.Role;
 import org.mi.projectuser.repository.ProjectUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,5 +36,19 @@ public class ProjectUserService {
 	
 	public ProjectUserInfo findRelationByUser(String ehr) {
 		return this.repository.findByUserCode(ehr);
+	}
+	
+	public List<ProjectUserInfo> findManagers(String projectCode) {
+		List<ProjectUserInfo> relaList = this.repository.findManagers(projectCode);
+		if (null != relaList && relaList.size() != 0) {
+			Iterator<ProjectUserInfo> it = relaList.iterator();
+			while(it.hasNext()) {
+				ProjectUserInfo info = it.next();
+				if (info.getRole().equals(Role.DEV)) {
+					it.remove();
+				}
+			}
+		}
+		return relaList;
 	}
 }

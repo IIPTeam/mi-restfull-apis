@@ -1,7 +1,6 @@
 package org.mi.projectuser.controller;
 
 import java.util.List;
-import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -38,8 +37,14 @@ public class ProjectUserController {
 	}
 
 	// retrieve relation ship by ehr/staffid
-	@RequestMapping(value = "/{ehr}", method = RequestMethod.GET)
-	public ProjectUserInfo findRelationByUser(@PathVariable("ehr") @NotEmpty String ehr) {
+	@RequestMapping(value = "/user/{ehr}", method = RequestMethod.GET)
+	public ProjectUserInfo findProjectByUser(@PathVariable("ehr") @NotEmpty String ehr) {
 		return projectUserService.findRelationByUser(ehr);
+	}
+	
+	// retrieve project manager by project code
+	@RequestMapping(value = "/project/{projectCode}", method = RequestMethod.GET)
+	public List<ProjectUserInfo> findManagers(@PathVariable("projectCode") @NotEmpty String projectCode) {
+		return projectUserService.findManagers(projectCode);
 	}
 }
