@@ -91,6 +91,9 @@
 				<configuration>
 					<imageName>${docker.image.prefix}/${project.artifactId}:${project.version}</imageName>
 					<dockerDirectory>src/main/docker</dockerDirectory>
+					<buildArgs>
+						<VERSION>${project.version}</VERSION>
+					</buildArgs>
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
